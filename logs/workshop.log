@@ -260,3 +260,263 @@ LiteLLM completion() model= meta-llama/llama-3.3-70b-instruct:free; provider = o
 2025-11-20 23:09:45 | INFO | crew | Task 'Frontend Task' completed with output length=3805
 2025-11-20 23:09:45 | INFO | crew | Task 'Test Task' completed with output length=487
 2025-11-20 23:09:45 | INFO | crew | All tasks completed successfully
+2025-11-20 23:17:34 | INFO | main | Starting workshop pipeline for requirements: Build a simple calculator that can perform basic arithmetic operations (addition, subtraction, multi (module=calculator.py, class=Calculator)
+2025-11-20 23:17:34 | INFO | crew | Crew kickoff started (provider=openrouter-liteLLM model=meta-llama/llama-3.3-70b-instruct:free base_url=https://openrouter.ai/api/v1)
+2025-11-20 23:17:35 | INFO | LiteLLM | 
+LiteLLM completion() model= meta-llama/llama-3.3-70b-instruct:free; provider = openrouter
+2025-11-20 23:18:25 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2025-11-20 23:18:25 | INFO | LiteLLM | 
+LiteLLM completion() model= meta-llama/llama-3.3-70b-instruct:free; provider = openrouter
+2025-11-20 23:18:28 | ERROR | crew | Crew run failed on attempt 1/2 with overrides {}
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 208, in _make_common_sync_call
+    response = sync_httpx_client.post(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 898, in post
+    raise e
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 880, in post
+    response.raise_for_status()
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\main.py", line 2747, in completion
+    response = base_llm_http_handler.completion(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 511, in completion
+    response = self._make_common_sync_call(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 233, in _make_common_sync_call
+    raise self._handle_error(e=e, provider_config=provider_config)
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 3582, in _handle_error
+    raise provider_config.get_error_class(
+litellm.llms.openrouter.common_utils.OpenRouterException: {"error":{"message":"User not found.","code":401}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\Desktop\projects-only\projects-only\AgenticAI_Workshop_Team10\crew.py", line 177, in run_workshop_pipeline_with_tracking
+    result = _execute_crew_with_tracking(
+  File "C:\Users\LENOVO\Desktop\projects-only\projects-only\AgenticAI_Workshop_Team10\crew.py", line 124, in _execute_crew_with_tracking
+    result = crew.kickoff(inputs={
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\crew.py", line 706, in kickoff
+    result = self._run_sequential_process()
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\crew.py", line 823, in _run_sequential_process
+    return self._execute_tasks(self.tasks)
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\crew.py", line 931, in _execute_tasks
+    task_output = task.execute_sync(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\task.py", line 458, in execute_sync
+    return self._execute_core(agent, context, tools)
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\task.py", line 591, in _execute_core
+    raise e  # Re-raise the exception after emitting the event
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\task.py", line 522, in _execute_core
+    result = agent.execute_task(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\agent\core.py", line 514, in execute_task
+    raise e
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\agent\core.py", line 490, in execute_task
+    result = self._execute_without_timeout(task_prompt, task)
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\agent\core.py", line 598, in _execute_without_timeout
+    return self.agent_executor.invoke(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\agents\crew_agent_executor.py", line 188, in invoke
+    formatted_answer = self._invoke_loop()
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\agents\crew_agent_executor.py", line 287, in _invoke_loop
+    raise e
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\agents\crew_agent_executor.py", line 229, in _invoke_loop
+    answer = get_llm_response(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\utilities\agent_utils.py", line 276, in get_llm_response
+    raise e
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\utilities\agent_utils.py", line 268, in get_llm_response
+    answer = llm.call(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\llm.py", line 1317, in call
+    return self._handle_non_streaming_response(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\llm.py", line 1077, in _handle_non_streaming_response
+    response = litellm.completion(**params)
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\utils.py", line 1381, in wrapper
+    raise e
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\utils.py", line 1250, in wrapper
+    result = original_function(*args, **kwargs)
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\main.py", line 3772, in completion
+    raise exception_type(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2328, in exception_type
+    raise e
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2199, in exception_type
+    raise AuthenticationError(
+litellm.exceptions.AuthenticationError: litellm.AuthenticationError: AuthenticationError: OpenrouterException - {"error":{"message":"User not found.","code":401}}
+2025-11-20 23:18:28 | INFO | crew | Attempt 2/2 using overrides: {'provider': 'openai', 'model': 'meta-llama/llama-3.3-70b-instruct:free', 'default_headers': '[set]', 'extra_headers': '[set]'}
+2025-11-20 23:18:28 | INFO | crew | Crew kickoff started (provider=openai model=meta-llama/llama-3.3-70b-instruct:free base_url=https://openrouter.ai/api/v1)
+2025-11-20 23:19:17 | INFO | root | OpenAI API usage: {'prompt_tokens': 765, 'completion_tokens': 804, 'total_tokens': 1569}
+2025-11-20 23:19:17 | INFO | tools.web_search | DuckDuckGo search for query: python calculator design
+2025-11-20 23:19:18 | INFO | primp | response: https://www.bing.com/search?q=python+calculator+design 200
+2025-11-20 23:19:54 | INFO | root | OpenAI API usage: {'prompt_tokens': 1254, 'completion_tokens': 799, 'total_tokens': 2053}
+2025-11-20 23:19:57 | ERROR | root | OpenAI API call failed: Error code: 401 - {'error': {'message': 'User not found.', 'code': 401}}
+2025-11-20 23:19:57 | ERROR | root | OpenAI API call failed: Error code: 401 - {'error': {'message': 'User not found.', 'code': 401}}
+2025-11-20 23:20:29 | INFO | root | OpenAI API usage: {'prompt_tokens': 899, 'completion_tokens': 808, 'total_tokens': 1707}
+2025-11-20 23:20:29 | INFO | tools.web_search | DuckDuckGo search for query: Python arithmetic operations
+2025-11-20 23:20:30 | INFO | primp | response: https://www.bing.com/search?q=Python+arithmetic+operations 200
+2025-11-20 23:21:03 | INFO | root | OpenAI API usage: {'prompt_tokens': 952, 'completion_tokens': 802, 'total_tokens': 1754}
+2025-11-20 23:21:25 | INFO | root | OpenAI API usage: {'prompt_tokens': 1064, 'completion_tokens': 513, 'total_tokens': 1577}
+2025-11-20 23:22:06 | INFO | root | OpenAI API usage: {'prompt_tokens': 991, 'completion_tokens': 803, 'total_tokens': 1794}
+2025-11-20 23:22:06 | INFO | tools.web_search | DuckDuckGo search for query: pytest framework
+2025-11-20 23:22:07 | INFO | primp | response: https://www.bing.com/search?q=pytest+framework 200
+2025-11-20 23:22:47 | INFO | root | OpenAI API usage: {'prompt_tokens': 1459, 'completion_tokens': 806, 'total_tokens': 2265}
+2025-11-20 23:22:47 | INFO | tools.calculator | Calculator evaluated '2 + 2' -> 4.0
+2025-11-20 23:23:25 | INFO | root | OpenAI API usage: {'prompt_tokens': 1529, 'completion_tokens': 811, 'total_tokens': 2340}
+2025-11-20 23:23:25 | INFO | crew | Task 'Design Task' completed with output length=457
+2025-11-20 23:23:25 | INFO | crew | Task 'Code Task' completed with output length=1218
+2025-11-20 23:23:25 | INFO | crew | Task 'Frontend Task' completed with output length=266
+2025-11-20 23:23:25 | INFO | crew | Task 'Test Task' completed with output length=3637
+2025-11-20 23:23:25 | INFO | crew | All tasks completed successfully
+2025-11-20 23:23:25 | INFO | crew | Fallback succeeded on attempt 2/2
+2025-11-20 23:24:50 | INFO | main | Starting workshop pipeline for requirements: Build a simple calculator that can perform basic arithmetic operations (addition, subtraction, multi (module=calculator.py, class=Calculator)
+2025-11-20 23:24:50 | INFO | crew | Crew kickoff started (provider=openrouter-liteLLM model=meta-llama/llama-3.3-70b-instruct:free base_url=https://openrouter.ai/api/v1)
+2025-11-20 23:24:50 | INFO | LiteLLM | 
+LiteLLM completion() model= meta-llama/llama-3.3-70b-instruct:free; provider = openrouter
+2025-11-20 23:25:28 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2025-11-20 23:25:28 | INFO | LiteLLM | 
+LiteLLM completion() model= meta-llama/llama-3.3-70b-instruct:free; provider = openrouter
+2025-11-20 23:26:17 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2025-11-20 23:26:17 | INFO | LiteLLM | 
+LiteLLM completion() model= meta-llama/llama-3.3-70b-instruct:free; provider = openrouter
+2025-11-20 23:26:31 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2025-11-20 23:26:31 | INFO | tools.calculator | Calculator evaluated '10/2' -> 5.0
+2025-11-20 23:26:31 | INFO | LiteLLM | 
+LiteLLM completion() model= meta-llama/llama-3.3-70b-instruct:free; provider = openrouter
+2025-11-20 23:27:05 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2025-11-20 23:27:05 | ERROR | crew | Crew run failed on attempt 1/2 with overrides {}
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\llm.py", line 1317, in call
+    return self._handle_non_streaming_response(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\llm.py", line 1077, in _handle_non_streaming_response
+    response = litellm.completion(**params)
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\utils.py", line 1381, in wrapper
+    raise e
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\utils.py", line 1311, in wrapper
+    executor.submit(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\agent\core.py", line 490, in execute_task
+    result = self._execute_without_timeout(task_prompt, task)
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\agent\core.py", line 598, in _execute_without_timeout
+    return self.agent_executor.invoke(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\agents\crew_agent_executor.py", line 188, in invoke
+    formatted_answer = self._invoke_loop()
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\agents\crew_agent_executor.py", line 299, in _invoke_loop
+    raise e
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\agents\crew_agent_executor.py", line 229, in _invoke_loop
+    answer = get_llm_response(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\utilities\agent_utils.py", line 276, in get_llm_response
+    raise e
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\utilities\agent_utils.py", line 268, in get_llm_response
+    answer = llm.call(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\llm.py", line 1358, in call
+    crewai_event_bus.emit(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\events\event_bus.py", line 352, in emit
+    sync_future = self._sync_executor.submit(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\agent\core.py", line 467, in execute_task
+    crewai_event_bus.emit(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\events\event_bus.py", line 352, in emit
+    sync_future = self._sync_executor.submit(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\agent\core.py", line 467, in execute_task
+    crewai_event_bus.emit(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\events\event_bus.py", line 352, in emit
+    sync_future = self._sync_executor.submit(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\task.py", line 522, in _execute_core
+    result = agent.execute_task(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\agent\core.py", line 526, in execute_task
+    result = self.execute_task(task, context, tools)
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\agent\core.py", line 526, in execute_task
+    result = self.execute_task(task, context, tools)
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\agent\core.py", line 517, in execute_task
+    crewai_event_bus.emit(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\events\event_bus.py", line 352, in emit
+    sync_future = self._sync_executor.submit(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\crew.py", line 706, in kickoff
+    result = self._run_sequential_process()
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\crew.py", line 823, in _run_sequential_process
+    return self._execute_tasks(self.tasks)
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\crew.py", line 931, in _execute_tasks
+    task_output = task.execute_sync(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\task.py", line 458, in execute_sync
+    return self._execute_core(agent, context, tools)
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\task.py", line 590, in _execute_core
+    crewai_event_bus.emit(self, TaskFailedEvent(error=str(e), task=self))  # type: ignore[no-untyped-call]
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\events\event_bus.py", line 352, in emit
+    sync_future = self._sync_executor.submit(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\Desktop\projects-only\projects-only\AgenticAI_Workshop_Team10\crew.py", line 177, in run_workshop_pipeline_with_tracking
+    result = _execute_crew_with_tracking(
+  File "C:\Users\LENOVO\Desktop\projects-only\projects-only\AgenticAI_Workshop_Team10\crew.py", line 124, in _execute_crew_with_tracking
+    result = crew.kickoff(inputs={
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\crew.py", line 721, in kickoff
+    crewai_event_bus.emit(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\events\event_bus.py", line 352, in emit
+    sync_future = self._sync_executor.submit(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+2025-11-20 23:27:05 | INFO | crew | Attempt 2/2 using overrides: {'provider': 'openai', 'model': 'meta-llama/llama-3.3-70b-instruct:free', 'default_headers': '[set]', 'extra_headers': '[set]'}
+2025-11-20 23:27:05 | INFO | crew | Crew kickoff started (provider=openai model=meta-llama/llama-3.3-70b-instruct:free base_url=https://openrouter.ai/api/v1)
+2025-11-20 23:27:05 | ERROR | crew | Crew run failed on attempt 2/2 with overrides {'provider': 'openai', 'model': 'meta-llama/llama-3.3-70b-instruct:free', 'default_headers': '[set]', 'extra_headers': '[set]'}
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\crew.py", line 675, in kickoff
+    crewai_event_bus.emit(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\events\event_bus.py", line 352, in emit
+    sync_future = self._sync_executor.submit(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\Desktop\projects-only\projects-only\AgenticAI_Workshop_Team10\crew.py", line 177, in run_workshop_pipeline_with_tracking
+    result = _execute_crew_with_tracking(
+  File "C:\Users\LENOVO\Desktop\projects-only\projects-only\AgenticAI_Workshop_Team10\crew.py", line 124, in _execute_crew_with_tracking
+    result = crew.kickoff(inputs={
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\crew.py", line 721, in kickoff
+    crewai_event_bus.emit(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\events\event_bus.py", line 352, in emit
+    sync_future = self._sync_executor.submit(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\thread.py", line 167, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
