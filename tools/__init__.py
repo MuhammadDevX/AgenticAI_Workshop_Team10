@@ -9,12 +9,17 @@ from crewai.tools import BaseTool
 from .calculator import CalculatorTool
 from .rag_tool import LocalRAGTool
 from .web_search import create_web_search_tool
+from .code_validator import create_code_validator_tool
+from .file_writer import create_file_writer_tool
 
 __all__ = [
     "create_rag_tool",
     "create_web_search_tool",
     "create_calculator_tool",
+    "create_code_validator_tool",
+    "create_file_writer_tool",
     "get_default_toolkit",
+    "get_code_toolkit",
 ]
 
 
@@ -38,4 +43,13 @@ def get_default_toolkit() -> List[BaseTool]:
         create_rag_tool(),
         create_web_search_tool(),
         create_calculator_tool(),
+    ]
+
+
+def get_code_toolkit() -> List[BaseTool]:
+    """Provide tools specifically for code generation and validation."""
+    return [
+        create_code_validator_tool(),
+        create_file_writer_tool(),
+        create_rag_tool(),
     ]

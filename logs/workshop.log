@@ -1,0 +1,262 @@
+2025-11-20 22:41:16 | INFO | main | Starting workshop pipeline for topic: Designing a Multi-Agent Workshop for Cloud-Native Deployments
+2025-11-20 22:41:16 | ERROR | crew | Crew run failed on attempt 1/2 with overrides {}
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\Desktop\projects-only\projects-only\AgenticAI_Workshop_Team10\crew.py", line 157, in run_workshop_pipeline
+    result = _execute_crew(topic, overrides, config)
+  File "C:\Users\LENOVO\Desktop\projects-only\projects-only\AgenticAI_Workshop_Team10\crew.py", line 106, in _execute_crew
+    crew = create_workshop_crew(llm_overrides=overrides)
+  File "C:\Users\LENOVO\Desktop\projects-only\projects-only\AgenticAI_Workshop_Team10\crew.py", line 43, in create_workshop_crew
+    agents=[planner, researcher, writer, reviewer],
+NameError: name 'researcher' is not defined
+2025-11-20 22:41:16 | INFO | crew | Attempt 2/2 using overrides: {'provider': 'openai', 'model': 'meta-llama/llama-3.3-70b-instruct:free', 'default_headers': '[set]', 'extra_headers': '[set]'}
+2025-11-20 22:41:16 | ERROR | crew | Crew run failed on attempt 2/2 with overrides {'provider': 'openai', 'model': 'meta-llama/llama-3.3-70b-instruct:free', 'default_headers': '[set]', 'extra_headers': '[set]'}
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\Desktop\projects-only\projects-only\AgenticAI_Workshop_Team10\crew.py", line 157, in run_workshop_pipeline
+    result = _execute_crew(topic, overrides, config)
+  File "C:\Users\LENOVO\Desktop\projects-only\projects-only\AgenticAI_Workshop_Team10\crew.py", line 106, in _execute_crew
+    crew = create_workshop_crew(llm_overrides=overrides)
+  File "C:\Users\LENOVO\Desktop\projects-only\projects-only\AgenticAI_Workshop_Team10\crew.py", line 43, in create_workshop_crew
+    agents=[planner, researcher, writer, reviewer],
+NameError: name 'researcher' is not defined
+2025-11-20 22:42:30 | INFO | main | Starting workshop pipeline for topic: Designing a Multi-Agent Workshop for Cloud-Native Deployments
+2025-11-20 22:42:30 | ERROR | crew | Crew run failed on attempt 1/2 with overrides {}
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\Desktop\projects-only\projects-only\AgenticAI_Workshop_Team10\crew.py", line 157, in run_workshop_pipeline
+    result = _execute_crew(topic, overrides, config)
+  File "C:\Users\LENOVO\Desktop\projects-only\projects-only\AgenticAI_Workshop_Team10\crew.py", line 106, in _execute_crew
+    crew = create_workshop_crew(llm_overrides=overrides)
+  File "C:\Users\LENOVO\Desktop\projects-only\projects-only\AgenticAI_Workshop_Team10\crew.py", line 43, in create_workshop_crew
+    agents=[planner, backend_engineer, frontend_engineer, test_engineer],
+NameError: name 'researcher' is not defined
+2025-11-20 22:42:30 | INFO | crew | Attempt 2/2 using overrides: {'provider': 'openai', 'model': 'meta-llama/llama-3.3-70b-instruct:free', 'default_headers': '[set]', 'extra_headers': '[set]'}
+2025-11-20 22:42:31 | ERROR | crew | Crew run failed on attempt 2/2 with overrides {'provider': 'openai', 'model': 'meta-llama/llama-3.3-70b-instruct:free', 'default_headers': '[set]', 'extra_headers': '[set]'}
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\Desktop\projects-only\projects-only\AgenticAI_Workshop_Team10\crew.py", line 157, in run_workshop_pipeline
+    result = _execute_crew(topic, overrides, config)
+  File "C:\Users\LENOVO\Desktop\projects-only\projects-only\AgenticAI_Workshop_Team10\crew.py", line 106, in _execute_crew
+    crew = create_workshop_crew(llm_overrides=overrides)
+  File "C:\Users\LENOVO\Desktop\projects-only\projects-only\AgenticAI_Workshop_Team10\crew.py", line 43, in create_workshop_crew
+    agents=[planner, backend_engineer, frontend_engineer, test_engineer],
+NameError: name 'researcher' is not defined
+2025-11-20 22:43:15 | INFO | main | Starting workshop pipeline for topic: Designing a Multi-Agent Workshop for Cloud-Native Deployments
+2025-11-20 22:43:15 | INFO | crew | Crew kickoff started for topic: Designing a Multi-Agent Workshop for Cloud-Native Deployments (provider=openrouter-liteLLM model=meta-llama/llama-3.3-70b-instruct:free base_url=https://openrouter.ai/api/v1)
+2025-11-20 22:43:15 | ERROR | crew | Crew run failed on attempt 1/2 with overrides {}
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\Desktop\projects-only\projects-only\AgenticAI_Workshop_Team10\crew.py", line 157, in run_workshop_pipeline
+    result = _execute_crew(topic, overrides, config)
+  File "C:\Users\LENOVO\Desktop\projects-only\projects-only\AgenticAI_Workshop_Team10\crew.py", line 117, in _execute_crew
+    result = crew.kickoff(inputs={"topic": topic})
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\crew.py", line 686, in kickoff
+    self._interpolate_inputs(inputs)
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\crew.py", line 1381, in _interpolate_inputs
+    agent.interpolate_inputs(inputs)
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\agents\agent_builder\base_agent.py", line 434, in interpolate_inputs
+    self.goal = interpolate_only(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\utilities\string_utils.py", line 72, in interpolate_only
+    raise KeyError(
+KeyError: "Template variable 'requirements' not found in inputs dictionary"
+2025-11-20 22:43:15 | INFO | crew | Attempt 2/2 using overrides: {'provider': 'openai', 'model': 'meta-llama/llama-3.3-70b-instruct:free', 'default_headers': '[set]', 'extra_headers': '[set]'}
+2025-11-20 22:43:16 | INFO | crew | Crew kickoff started for topic: Designing a Multi-Agent Workshop for Cloud-Native Deployments (provider=openai model=meta-llama/llama-3.3-70b-instruct:free base_url=https://openrouter.ai/api/v1)
+2025-11-20 22:43:16 | ERROR | crew | Crew run failed on attempt 2/2 with overrides {'provider': 'openai', 'model': 'meta-llama/llama-3.3-70b-instruct:free', 'default_headers': '[set]', 'extra_headers': '[set]'}
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\Desktop\projects-only\projects-only\AgenticAI_Workshop_Team10\crew.py", line 157, in run_workshop_pipeline
+    result = _execute_crew(topic, overrides, config)
+  File "C:\Users\LENOVO\Desktop\projects-only\projects-only\AgenticAI_Workshop_Team10\crew.py", line 117, in _execute_crew
+    result = crew.kickoff(inputs={"topic": topic})
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\crew.py", line 686, in kickoff
+    self._interpolate_inputs(inputs)
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\crew.py", line 1381, in _interpolate_inputs
+    agent.interpolate_inputs(inputs)
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\agents\agent_builder\base_agent.py", line 434, in interpolate_inputs
+    self.goal = interpolate_only(
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python310\lib\site-packages\crewai\utilities\string_utils.py", line 72, in interpolate_only
+    raise KeyError(
+KeyError: "Template variable 'requirements' not found in inputs dictionary"
+2025-11-20 22:43:36 | WARNING | crewai.events.listeners.tracing.utils | Failed to load user data: Expecting value: line 1 column 1 (char 0)
+2025-11-20 22:47:09 | INFO | main | Starting workshop pipeline for topic: Designing a Multi-Agent Workshop for Cloud-Native Deployments
+2025-11-20 22:47:09 | INFO | crew | Crew kickoff started for topic: Designing a Multi-Agent Workshop for Cloud-Native Deployments (provider=openrouter-liteLLM model=meta-llama/llama-3.3-70b-instruct:free base_url=https://openrouter.ai/api/v1)
+2025-11-20 22:47:10 | INFO | LiteLLM | 
+LiteLLM completion() model= meta-llama/llama-3.3-70b-instruct:free; provider = openrouter
+2025-11-20 22:47:57 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2025-11-20 22:47:57 | INFO | LiteLLM | 
+LiteLLM completion() model= meta-llama/llama-3.3-70b-instruct:free; provider = openrouter
+2025-11-20 22:48:24 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2025-11-20 22:48:24 | INFO | LiteLLM | 
+LiteLLM completion() model= meta-llama/llama-3.3-70b-instruct:free; provider = openrouter
+2025-11-20 22:48:46 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2025-11-20 22:48:46 | INFO | LiteLLM | 
+LiteLLM completion() model= meta-llama/llama-3.3-70b-instruct:free; provider = openrouter
+2025-11-20 22:49:16 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2025-11-20 22:49:16 | INFO | LiteLLM | 
+LiteLLM completion() model= meta-llama/llama-3.3-70b-instruct:free; provider = openrouter
+2025-11-20 22:49:48 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2025-11-20 22:49:48 | INFO | crew | Task 'Design Task' output:
+```python
+# generated_module.py
+class Agent:
+    def __init__(self, agent_id, agent_type):
+        self.agent_id = agent_id
+        self.agent_type = agent_type
+
+    def register
+2025-11-20 22:49:48 | INFO | crew | Task 'Code Task' output:
+import queue
+
+class Agent:
+    def __init__(self, agent_id, agent_type):
+        self.agent_id = agent_id
+        self.agent_type = agent_type
+
+    def register(self, agents):
+        agents[self.agent_id] = self
+
+    def execute_task(self, task):
+        print(f"Agent {self.agent_id} executing task {task.task_id}")
+
+class Task:
+    def __init__(self, task_id, task_type):
+        self.task_id = task_id
+        self.task_type = task_type
+
+class MultiAgentSystem:
+    def __init__(self):
+        self.agents = {}
+        self.tasks = queue.Queue()
+
+    def register_agent(self, agent):
+        agent.register(self.agents)
+
+    def assign_task(self, task):
+        self.tasks.put(task)
+
+    def execute_tasks(self):
+        while not self.tasks.empty():
+            task = self.tasks.get()
+            for agent in self.agents.values():
+                if agent.agent_type == task.task_type:
+                    agent.execute_task(task)
+                    break
+
+agents = {}
+system = MultiAgentSystem()
+
+agent1 = Agent("agent1", "type1")
+agent2 = Agent("agent2", "type2")
+
+task1 = Task("task1", "type1")
+task2 = Task("task2", "type2")
+
+system.register_agent(agent1)
+system.register_agent(agent2)
+
+system.assign_task(task1)
+system.assign_task(task2)
+
+system.execute_tasks()
+2025-11-20 22:49:48 | INFO | crew | Task 'Frontend Task' output:
+import gradio as gr
+from generated_module import Agent, Task, MultiAgentSystem
+
+demo = MultiAgentSystem()
+
+def register_agent(agent_id, agent_type):
+    agent = Agent(agent_id, agent_type)
+    demo.register_agent(agent)
+    return f"Agent {agent_id} registered"
+
+def assign_task(task_id, task_type):
+    task = Task(task_id, task_type)
+    demo.assign_task(task)
+    return f"Task {task_id} assigned"
+
+def execute_tasks():
+    demo.execute_tasks()
+    return "Tasks executed"
+
+demo_ui = gr.Interface(
+    fn=lambda agent_id, agent_type, task_id, task_type: [register_agent(agent_id, agent_type), assign_task(task_id, task_type), execute_tasks()],
+    inputs=[
+        gr.Textbox(label="Agent ID"),
+        gr.Textbox(label="Agent Type"),
+        gr.Textbox(label="Task ID"),
+        gr.Textbox(label="Task Type")
+    ],
+    outputs=[
+        gr.Textbox(label="Agent Registration"),
+        gr.Textbox(label="Task Assignment"),
+        gr.Textbox(label="Task Execution")
+    ],
+    title="Multi-Agent System Demo",
+    description="Register agents and assign tasks to them"
+)
+
+if __name__ == "__main__":
+    demo_ui.launch()
+2025-11-20 22:49:48 | INFO | crew | Task 'Test Task' output:
+import unittest
+from generated_module import Agent, Task, MultiAgentSystem
+
+class TestAgent(unittest.TestCase):
+    def test_init(self):
+        agent = Agent("agent1", "type1")
+        self.assertEqual(agent.agent_id, "agent1")
+        self.assertEqual(agent.agent_type, "type1")
+
+    def test_register(self):
+        agent = Agent("agent1", "type1")
+        agents = {}
+        agent.register(agents)
+        self.assertIn("agent1", agents)
+
+    def test_execute_task(self):
+        agent = Agent("agent1", "type1")
+        task = Task("task1", "type1")
+        agent.execute_task(task)
+
+class TestTask(unittest.TestCase):
+    def test_init(self):
+        task = Task("task1", "type1")
+        self.assertEqual(task.task_id, "task1")
+        self.assertEqual(task.task_type, "type1")
+
+class TestMultiAgentSystem(unittest.TestCase):
+    def test_init(self):
+        system = MultiAgentSystem()
+        self.assertEqual(system.agents, {})
+        self.assertIsInstance(system.tasks, type(queue.Queue()))
+
+    def test_register_agent(self):
+        system = MultiAgentSystem()
+        agent
+2025-11-20 22:49:48 | INFO | crew | Crew completed with final output length=1089 characters
+2025-11-20 23:05:19 | INFO | main | Starting workshop pipeline for requirements: Build a code for a simple data chart (module=data.py, class=DataChart)
+2025-11-20 23:05:20 | INFO | crew | Crew kickoff started (provider=openrouter-liteLLM model=meta-llama/llama-3.3-70b-instruct:free base_url=https://openrouter.ai/api/v1)
+2025-11-20 23:05:20 | INFO | LiteLLM | 
+LiteLLM completion() model= meta-llama/llama-3.3-70b-instruct:free; provider = openrouter
+2025-11-20 23:05:58 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2025-11-20 23:05:58 | INFO | LiteLLM | 
+LiteLLM completion() model= meta-llama/llama-3.3-70b-instruct:free; provider = openrouter
+2025-11-20 23:06:30 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2025-11-20 23:06:30 | INFO | LiteLLM | 
+LiteLLM completion() model= meta-llama/llama-3.3-70b-instruct:free; provider = openrouter
+2025-11-20 23:07:06 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2025-11-20 23:07:06 | INFO | LiteLLM | 
+LiteLLM completion() model= meta-llama/llama-3.3-70b-instruct:free; provider = openrouter
+2025-11-20 23:07:25 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2025-11-20 23:07:25 | INFO | LiteLLM | 
+LiteLLM completion() model= meta-llama/llama-3.3-70b-instruct:free; provider = openrouter
+2025-11-20 23:07:59 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2025-11-20 23:08:00 | INFO | LiteLLM | 
+LiteLLM completion() model= meta-llama/llama-3.3-70b-instruct:free; provider = openrouter
+2025-11-20 23:08:30 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2025-11-20 23:08:30 | INFO | LiteLLM | 
+LiteLLM completion() model= meta-llama/llama-3.3-70b-instruct:free; provider = openrouter
+2025-11-20 23:09:09 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2025-11-20 23:09:09 | INFO | LiteLLM | 
+LiteLLM completion() model= meta-llama/llama-3.3-70b-instruct:free; provider = openrouter
+2025-11-20 23:09:44 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2025-11-20 23:09:45 | INFO | crew | Task 'Design Task' completed with output length=1238
+2025-11-20 23:09:45 | INFO | crew | Task 'Code Task' completed with output length=1809
+2025-11-20 23:09:45 | INFO | crew | Task 'Frontend Task' completed with output length=3805
+2025-11-20 23:09:45 | INFO | crew | Task 'Test Task' completed with output length=487
+2025-11-20 23:09:45 | INFO | crew | All tasks completed successfully
