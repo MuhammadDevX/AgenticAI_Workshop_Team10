@@ -1,4 +1,4 @@
-crewai>=0.37.1
+crewai
 crewai-tools>=0.11.0
 langchain>=0.2.7
 langchain-community>=0.2.7
