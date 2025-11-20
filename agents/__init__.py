@@ -1,8 +1,8 @@
 """Agent factory functions for the Agentic AI workshop."""
-from .planner import create_planner_agent
-from .researcher import create_researcher_agent
-from .writer import create_writer_agent
-from .reviewer import create_reviewer_agent
+from .engineering_lead import create_planner_agent
+from .backend_engineer import create_researcher_agent
+from .test_engineer import create_writer_agent
+from .frontend_engineer import create_reviewer_agent
 
 __all__ = [
     "create_planner_agent",
