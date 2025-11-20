@@ -5,7 +5,7 @@ from typing import List
 
 from crewai import Task
 
-from tools import create_calculator_tool, create_rag_tool, create_web_search_tool, create_code_validator_tool
+from tools import create_calculator_tool, create_web_search_tool, create_code_validator_tool
 
 
 def create_design_task(agent) -> Task:
@@ -44,7 +44,6 @@ def create_design_task(agent) -> Task:
 def create_code_task(agent, tools=None) -> Task:
     """Code task: Backend engineer implements the design."""
     tools = list(tools) if tools is not None else [
-        create_rag_tool(),
         create_web_search_tool(),
         create_calculator_tool(),
         create_code_validator_tool(),
